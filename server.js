@@ -33,6 +33,10 @@ app.use(cookieParser());
 if (process.env.NODE_ENV === "development") {
   app.use(cors({ origin: "https://gwl-demo.netlify.app" }));
 }
+
+// Enable preflight OPTIONS for all routes
+app.options("*", cors());
+
 // routes middleware
 app.use("/api", authRoutes);
 app.use("/api", userRoutes);
