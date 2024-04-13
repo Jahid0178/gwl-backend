@@ -31,9 +31,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 // cors
 if (process.env.NODE_ENV === "development") {
-  app.use(
-    cors({ origin: "https://661afcccdc2f1fe1b568ebc4--gwl-demo.netlify.app" })
-  );
+  app.use(cors({ origin: "https://gwl-demo.netlify.app" }));
 }
 // routes middleware
 app.use("/api", authRoutes);
